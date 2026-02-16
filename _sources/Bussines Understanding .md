@@ -1,4 +1,4 @@
-# Business Understanding
+# Business 
 
 Business Understanding adalah tahap pertama dan paling penting dalam proses CRISP-DM yang bertujuan untuk memahami konteks bisnis dari suatu proyek data mining. Pada tahap ini fokusnya bukan pada data atau teknik, tetapi pada mengerti secara penuh apa masalah bisnis yang ingin diselesaikan dan apa tujuan yang ingin dicapai.
 
