@@ -208,3 +208,10 @@ Nilai rata-rata menunjukkan bahwa petal length dan petal width memiliki variasi 
 
 Rentang nilai minimum dan maksimum juga memperlihatkan bahwa spesies memiliki karakteristik morfologi yang berbeda, terutama pada ukuran petal. Tidak ditemukan nilai kosong (missing value) dalam dataset, sehingga data dapat digunakan langsung untuk analisis lebih lanjut tanpa proses pembersihan data tambahan.
 
+![original image](https://cdn.mathpix.com/snip/images/HDC--owJyN2brHw80LVv73mBWygr0yxk9lX4t96wFvc.original.fullsize.png)
+
+### Visualisasi Scatter Plot Sepal dan Petal
+
+![original image](https://cdn.mathpix.com/snip/images/wdF8Z79VGVflh2mDtT56v_4f5q5SlGbLHtM778Ut6ac.original.fullsize.png)
+
+![original image](https://cdn.mathpix.com/snip/images/1K4uhfC_chCDhN56N1oE_UogCOe7cSdr_zdgA9iD8zI.original.fullsize.png)
