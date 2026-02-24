@@ -172,3 +172,39 @@ Statistik deskriptif ini memberikan indikasi bahwa data memiliki pola yang memun
 
 Hasil pemeriksaan menunjukkan bahwa tidak terdapat data duplikat pada dataset. Setiap baris data merepresentasikan sampel bunga yang unik. Kondisi ini menunjukkan bahwa dataset memiliki kualitas yang baik dan dapat langsung digunakan pada tahap persiapan data tanpa proses penghapusan duplikasi.
 
+# Eksplorasi Data Iris
+
+### Visualisasi
+
+Visualisasi dilakukan untuk memahami pola distribusi data dan hubungan antar variabel. Berdasarkan gambar yang ditampilkan (histogram dan/atau scatter plot), terlihat bahwa distribusi pada variabel petal length dan petal width menunjukkan pemisahan yang cukup jelas antar spesies.
+
+Pada scatter plot antara petal length dan petal width, terlihat bahwa spesies Iris-setosa membentuk kelompok (cluster) yang terpisah secara signifikan dari dua spesies lainnya. Sementara itu, Iris-versicolor dan Iris-virginica memiliki sedikit area tumpang tindih, namun masih dapat dibedakan berdasarkan ukuran petalnya.
+
+Histogram menunjukkan bahwa sebagian besar variabel memiliki distribusi yang relatif normal, meskipun terdapat perbedaan rentang nilai antar spesies. Visualisasi ini membantu dalam memahami bahwa fitur petal lebih efektif dalam membedakan spesies dibandingkan fitur sepal.
+
+Dari visualisasi tersebut dapat disimpulkan bahwa data memiliki pola yang jelas dan tidak tersebar secara acak, sehingga sangat mendukung untuk analisis klasifikasi.
+
+* Sepal
+
+![original image](https://cdn.mathpix.com/snip/images/Y0D4Vc_bKZyv6KgPthBSm8pOPKFWZf-ZcZEN1qaBDpM.original.fullsize.png)
+
+* Petal
+
+![original image](https://cdn.mathpix.com/snip/images/cbXgTI0n7n5F-Hm_QEabnsoY06-1zrCTGJM6BGw0VT4.original.fullsize.png)
+
+### Analisa Korelasi
+
+Analisis korelasi dilakukan untuk mengetahui hubungan antar variabel numerik. Berdasarkan matriks korelasi (heatmap), terlihat bahwa petal length dan petal width memiliki korelasi yang sangat kuat (mendekati +1). Hal ini menunjukkan bahwa semakin panjang petal suatu bunga, maka semakin lebar pula petalnya.
+
+Sepal length memiliki korelasi sedang terhadap petal length dan petal width. Sedangkan sepal width menunjukkan korelasi yang relatif lebih lemah dibandingkan variabel lainnya.
+
+Korelasi yang kuat antara petal length dan petal width menunjukkan bahwa kedua variabel ini memiliki hubungan linier yang signifikan dan berperan penting dalam membedakan spesies. Oleh karena itu, fitur petal menjadi indikator utama dalam proses klasifikasi data Iris.
+
+### Statistik Deskriptif
+
+Berdasarkan hasil statistik deskriptif, diperoleh informasi mengenai nilai rata-rata (mean), standar deviasi, nilai minimum, maksimum, serta kuartil dari masing-masing variabel.
+
+Nilai rata-rata menunjukkan bahwa petal length dan petal width memiliki variasi nilai yang lebih besar dibandingkan sepal width. Standar deviasi yang relatif tinggi pada variabel petal mengindikasikan adanya perbedaan ukuran yang cukup signifikan antar spesies.
+
+Rentang nilai minimum dan maksimum juga memperlihatkan bahwa spesies memiliki karakteristik morfologi yang berbeda, terutama pada ukuran petal. Tidak ditemukan nilai kosong (missing value) dalam dataset, sehingga data dapat digunakan langsung untuk analisis lebih lanjut tanpa proses pembersihan data tambahan.
+

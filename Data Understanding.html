@@ -181,7 +181,9 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Understanding</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Data%20Prepation.html">Data Preparation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Bussines%20Understanding.html">Business Understanding</a></li>
 </ul>
 
     </div>
@@ -377,6 +379,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data Understanding</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referensi-data">1. Referensi Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-dataset">2. Deskripsi Dataset</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-dataset">3. Eksplorasi Dataset</a><ul class="nav section-nav flex-column">
@@ -398,6 +401,15 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Statistik Deskriptif Awal</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Pengecekan Data Duplikat</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data-iris">Eksplorasi Data Iris</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi">Visualisasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisa-korelasi">Analisa Korelasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-deskriptif">Statistik Deskriptif</a></li>
+</ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -702,6 +714,36 @@ Menunjukkan jenis bunga iris, yang terdiri dari tiga kategori:</p>
 <p>Hasil pemeriksaan menunjukkan bahwa tidak terdapat data duplikat pada dataset. Setiap baris data merepresentasikan sampel bunga yang unik. Kondisi ini menunjukkan bahwa dataset memiliki kualitas yang baik dan dapat langsung digunakan pada tahap persiapan data tanpa proses penghapusan duplikasi.</p>
 </section>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="eksplorasi-data-iris">
+<h1>Eksplorasi Data Iris<a class="headerlink" href="#eksplorasi-data-iris" title="Link to this heading">#</a></h1>
+<section id="visualisasi">
+<h2>Visualisasi<a class="headerlink" href="#visualisasi" title="Link to this heading">#</a></h2>
+<p>Visualisasi dilakukan untuk memahami pola distribusi data dan hubungan antar variabel. Berdasarkan gambar yang ditampilkan (histogram dan/atau scatter plot), terlihat bahwa distribusi pada variabel petal length dan petal width menunjukkan pemisahan yang cukup jelas antar spesies.</p>
+<p>Pada scatter plot antara petal length dan petal width, terlihat bahwa spesies Iris-setosa membentuk kelompok (cluster) yang terpisah secara signifikan dari dua spesies lainnya. Sementara itu, Iris-versicolor dan Iris-virginica memiliki sedikit area tumpang tindih, namun masih dapat dibedakan berdasarkan ukuran petalnya.</p>
+<p>Histogram menunjukkan bahwa sebagian besar variabel memiliki distribusi yang relatif normal, meskipun terdapat perbedaan rentang nilai antar spesies. Visualisasi ini membantu dalam memahami bahwa fitur petal lebih efektif dalam membedakan spesies dibandingkan fitur sepal.</p>
+<p>Dari visualisasi tersebut dapat disimpulkan bahwa data memiliki pola yang jelas dan tidak tersebar secara acak, sehingga sangat mendukung untuk analisis klasifikasi.</p>
+<ul class="simple">
+<li><p>Sepal</p></li>
+</ul>
+<p><img alt="original image" src="https://cdn.mathpix.com/snip/images/Y0D4Vc_bKZyv6KgPthBSm8pOPKFWZf-ZcZEN1qaBDpM.original.fullsize.png" /></p>
+<ul class="simple">
+<li><p>Petal</p></li>
+</ul>
+<p><img alt="original image" src="https://cdn.mathpix.com/snip/images/cbXgTI0n7n5F-Hm_QEabnsoY06-1zrCTGJM6BGw0VT4.original.fullsize.png" /></p>
+</section>
+<section id="analisa-korelasi">
+<h2>Analisa Korelasi<a class="headerlink" href="#analisa-korelasi" title="Link to this heading">#</a></h2>
+<p>Analisis korelasi dilakukan untuk mengetahui hubungan antar variabel numerik. Berdasarkan matriks korelasi (heatmap), terlihat bahwa petal length dan petal width memiliki korelasi yang sangat kuat (mendekati +1). Hal ini menunjukkan bahwa semakin panjang petal suatu bunga, maka semakin lebar pula petalnya.</p>
+<p>Sepal length memiliki korelasi sedang terhadap petal length dan petal width. Sedangkan sepal width menunjukkan korelasi yang relatif lebih lemah dibandingkan variabel lainnya.</p>
+<p>Korelasi yang kuat antara petal length dan petal width menunjukkan bahwa kedua variabel ini memiliki hubungan linier yang signifikan dan berperan penting dalam membedakan spesies. Oleh karena itu, fitur petal menjadi indikator utama dalam proses klasifikasi data Iris.</p>
+</section>
+<section id="statistik-deskriptif">
+<h2>Statistik Deskriptif<a class="headerlink" href="#statistik-deskriptif" title="Link to this heading">#</a></h2>
+<p>Berdasarkan hasil statistik deskriptif, diperoleh informasi mengenai nilai rata-rata (mean), standar deviasi, nilai minimum, maksimum, serta kuartil dari masing-masing variabel.</p>
+<p>Nilai rata-rata menunjukkan bahwa petal length dan petal width memiliki variasi nilai yang lebih besar dibandingkan sepal width. Standar deviasi yang relatif tinggi pada variabel petal mengindikasikan adanya perbedaan ukuran yang cukup signifikan antar spesies.</p>
+<p>Rentang nilai minimum dan maksimum juga memperlihatkan bahwa spesies memiliki karakteristik morfologi yang berbeda, terutama pada ukuran petal. Tidak ditemukan nilai kosong (missing value) dalam dataset, sehingga data dapat digunakan langsung untuk analisis lebih lanjut tanpa proses pembersihan data tambahan.</p>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -767,6 +809,7 @@ Menunjukkan jenis bunga iris, yang terdiri dari tiga kategori:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data Understanding</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referensi-data">1. Referensi Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-dataset">2. Deskripsi Dataset</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-dataset">3. Eksplorasi Dataset</a><ul class="nav section-nav flex-column">
@@ -788,6 +831,15 @@ Menunjukkan jenis bunga iris, yang terdiri dari tiga kategori:</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Statistik Deskriptif Awal</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Pengecekan Data Duplikat</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data-iris">Eksplorasi Data Iris</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi">Visualisasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisa-korelasi">Analisa Korelasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-deskriptif">Statistik Deskriptif</a></li>
+</ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
