@@ -432,6 +432,51 @@ document.write(`
 </li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-yang-digunakan">1. Dataset yang Digunakan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-wknn-manual">2. Perhitungan WKNN Manual</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-missing-value">2.1 Identifikasi Missing Value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-data">2.2 Normalisasi Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-similarity-si">2.3 Menghitung Similarity (Si)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-penyebut">2.4 Menghitung Penyebut</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-pembilang">2.5 Menghitung Pembilang</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-imputasi">2.6 Hasil Imputasi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-wknn-menggunakan-python">3. Perhitungan WKNN Menggunakan Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library">3.1 Import Library</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#membaca-dataset">3.2 Membaca Dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-kolom-normalisasi">3.3 Menentukan Kolom Normalisasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-min-dan-max">Menghitung Min dan Max</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.5 Normalisasi Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-data-missing">3.6 Menentukan Data Missing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-similarity">3.7 Menghitung Similarity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3.8 Menghitung Penyebut</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">3.9 Menghitung Pembilang</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">3.10 Hasil Imputasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">3.11 Kesimpulan</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2. Normalisasi Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macam-macam-normalisasi-data">2.1 Macam-macam Normalisasi Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#min-max-normalization">1. Min-Max Normalization</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#z-score-normalization">2. Z-Score Normalization</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-mean">Menghitung Mean</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-standar-deviasi">Menghitung Standar Deviasi</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-z-score">Perhitungan Z-Score</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#decimal-scaling-normalization">3. Decimal Scaling Normalization</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-data-menggunakan-sklearn">2.2 Normalisasi Data Menggunakan SKLearn</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#min-max-normalization-sklearn">1. Min-Max Normalization (sklearn)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#z-score-normalization-sklearn">2. Z-Score Normalization (sklearn)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#decimal-scaling-python">3. Decimal Scaling (Python)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Kesimpulan</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1035,6 +1080,581 @@ d(1,3) = 24.000102 + 0 + 0 = 24.000102
 </section>
 </section>
 </section>
+<section id="dataset-yang-digunakan">
+<h2>1. Dataset yang Digunakan<a class="headerlink" href="#dataset-yang-digunakan" title="Link to this heading">#</a></h2>
+<p>Dataset yang digunakan adalah <strong>Boston Housing Dataset</strong> yang diperoleh dari Kaggle. Dataset ini berisi berbagai atribut yang menggambarkan kondisi lingkungan, sosial ekonomi, serta karakteristik rumah di kota Boston.</p>
+<p>Dataset ini sering digunakan dalam machine learning untuk memprediksi harga rumah berdasarkan beberapa variabel seperti tingkat kriminalitas, jumlah kamar, dan kondisi lingkungan.</p>
+</section>
+<hr class="docutils" />
+<section id="perhitungan-wknn-manual">
+<h2>2. Perhitungan WKNN Manual<a class="headerlink" href="#perhitungan-wknn-manual" title="Link to this heading">#</a></h2>
+<section id="identifikasi-missing-value">
+<h3>2.1 Identifikasi Missing Value<a class="headerlink" href="#identifikasi-missing-value" title="Link to this heading">#</a></h3>
+<p>Terdapat missing value pada atribut <strong>LSTAT</strong> yang akan diimputasi menggunakan metode WKNN.</p>
+</section>
+<hr class="docutils" />
+<section id="normalisasi-data">
+<h3>2.2 Normalisasi Data<a class="headerlink" href="#normalisasi-data" title="Link to this heading">#</a></h3>
+<p>Data dinormalisasi menggunakan <strong>Min-Max Normalization</strong> agar semua atribut memiliki skala yang sama.</p>
+<p>Rumus:</p>
+<div class="math notranslate nohighlight">
+\[
+x' = \frac{x - x_{\min}}{x_{\max} - x_{\min}}
+\]</div>
+</section>
+<hr class="docutils" />
+<section id="menghitung-similarity-si">
+<h3>2.3 Menghitung Similarity (Si)<a class="headerlink" href="#menghitung-similarity-si" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+S_i = \frac{1}{\sum (Y_{ih} - Y_{jh})^2}
+\]</div>
+<p>Hasil:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Si</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0.096432567</p></td>
+</tr>
+<tr class="row-odd"><td><p>0.186117946</p></td>
+</tr>
+<tr class="row-even"><td><p>0.251889237</p></td>
+</tr>
+<tr class="row-odd"><td><p>1.262310597</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="menghitung-penyebut">
+<h3>2.4 Menghitung Penyebut<a class="headerlink" href="#menghitung-penyebut" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\sum S_i = 1.796750348
+\]</div>
+</section>
+<hr class="docutils" />
+<section id="menghitung-pembilang">
+<h3>2.5 Menghitung Pembilang<a class="headerlink" href="#menghitung-pembilang" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Si</p></th>
+<th class="head"><p>Yjh</p></th>
+<th class="head"><p>Si × Yjh</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0.096432567</p></td>
+<td><p>0.329032258</p></td>
+<td><p>0.031730</p></td>
+</tr>
+<tr class="row-odd"><td><p>0.186117946</p></td>
+<td><p>1</p></td>
+<td><p>0.186118</p></td>
+</tr>
+<tr class="row-even"><td><p>0.251889237</p></td>
+<td><p>0.175806452</p></td>
+<td><p>0.044277</p></td>
+</tr>
+<tr class="row-odd"><td><p>1.262310597</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="math notranslate nohighlight">
+\[
+\sum (S_i \times Y_{jh}) = 0.262125
+\]</div>
+</section>
+<hr class="docutils" />
+<section id="hasil-imputasi">
+<h3>2.6 Hasil Imputasi<a class="headerlink" href="#hasil-imputasi" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\hat{y}_{ih} =
+\frac{0.262125}{1.796750348}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\hat{y}_{ih} = 0.14589179
+\]</div>
+<p>Nilai ini digunakan untuk menggantikan missing value pada atribut <strong>LSTAT</strong>.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="perhitungan-wknn-menggunakan-python">
+<h2>3. Perhitungan WKNN Menggunakan Python<a class="headerlink" href="#perhitungan-wknn-menggunakan-python" title="Link to this heading">#</a></h2>
+<p>Perhitungan dilakukan menggunakan Python untuk memverifikasi hasil manual.</p>
+<section id="import-library">
+<h3>3.1 Import Library<a class="headerlink" href="#import-library" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">MinMaxScaler</span>
+</pre></div>
+</div>
+</section>
+<section id="membaca-dataset">
+<h3>3.2 Membaca Dataset<a class="headerlink" href="#membaca-dataset" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;data.xlsx&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;?&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="menentukan-kolom-normalisasi">
+<h3>3.3 Menentukan Kolom Normalisasi<a class="headerlink" href="#menentukan-kolom-normalisasi" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cols_norm</span> <span class="o">=</span> <span class="p">[</span>
+<span class="s1">&#39;CRIM&#39;</span><span class="p">,</span><span class="s1">&#39;INDUS&#39;</span><span class="p">,</span><span class="s1">&#39;NOX&#39;</span><span class="p">,</span><span class="s1">&#39;RM&#39;</span><span class="p">,</span><span class="s1">&#39;AGE&#39;</span><span class="p">,</span>
+<span class="s1">&#39;DIS&#39;</span><span class="p">,</span><span class="s1">&#39;TAX&#39;</span><span class="p">,</span><span class="s1">&#39;PTRATIO&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;LSTAT&#39;</span><span class="p">,</span><span class="s1">&#39;MEDV&#39;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="menghitung-min-dan-max">
+<h3>Menghitung Min dan Max<a class="headerlink" href="#menghitung-min-dan-max" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">min_val</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">cols_norm</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">max_val</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">cols_norm</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">min_val</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">max_val</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3>3.5 Normalisasi Data<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_norm</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cols_norm</span><span class="p">:</span>
+    <span class="n">df_norm</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">-</span> <span class="n">min_val</span><span class="p">[</span><span class="n">col</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">max_val</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">-</span> <span class="n">min_val</span><span class="p">[</span><span class="n">col</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df_norm</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="menentukan-data-missing">
+<h3>3.6 Menentukan Data Missing<a class="headerlink" href="#menentukan-data-missing" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">missing_index</span> <span class="o">=</span> <span class="n">df_norm</span><span class="p">[</span><span class="n">df_norm</span><span class="p">[</span><span class="s1">&#39;LSTAT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()]</span><span class="o">.</span><span class="n">index</span>
+<span class="n">row_missing</span> <span class="o">=</span> <span class="n">df_norm</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">missing_index</span><span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;LSTAT&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">complete_data</span> <span class="o">=</span> <span class="n">df_norm</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="menghitung-similarity">
+<h3>3.7 Menghitung Similarity<a class="headerlink" href="#menghitung-similarity" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Si</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">Yjh</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">complete_data</span><span class="p">)):</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="n">complete_data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;LSTAT&#39;</span><span class="p">)</span>
+    <span class="n">diff</span> <span class="o">=</span> <span class="p">(</span><span class="n">row_missing</span> <span class="o">-</span> <span class="n">row</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="n">similarity</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">diff</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    
+    <span class="n">Si</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">similarity</span><span class="p">)</span>
+    <span class="n">Yjh</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">complete_data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;LSTAT&#39;</span><span class="p">])</span>
+
+<span class="n">Si</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Si</span><span class="p">)</span>
+<span class="n">Yjh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Yjh</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Si</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>OUTPUT</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mf">0.09643257</span> <span class="mf">0.18611795</span> <span class="mf">0.25188924</span> <span class="mf">1.2623106</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3>3.8 Menghitung Penyebut<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">penyebut</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">Si</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">penyebut</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>OUTPUT</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.796750347642724</span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h3>3.9 Menghitung Pembilang<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pembilang</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">Si</span> <span class="o">*</span> <span class="n">Yjh</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pembilang</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>OUTPUT</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">0.262125</span>
+</pre></div>
+</div>
+</section>
+<section id="id6">
+<h3>3.10 Hasil Imputasi<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hasil</span> <span class="o">=</span> <span class="n">pembilang</span> <span class="o">/</span> <span class="n">penyebut</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hasil</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>OUTPUT</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">0.14589179</span>
+</pre></div>
+</div>
+</section>
+<section id="kesimpulan">
+<h3>3.11 Kesimpulan<a class="headerlink" href="#kesimpulan" title="Link to this heading">#</a></h3>
+<p>Hasil imputasi menggunakan Python menghasilkan nilai 0.14589179, sama dengan perhitungan manual. Hal ini menunjukkan bahwa proses perhitungan WKNN telah dilakukan dengan benar.</p>
+</section>
+</section>
+<section id="id7">
+<h2>2. Normalisasi Data<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<p>Normalisasi data merupakan proses mengubah skala nilai pada dataset ke dalam rentang tertentu agar setiap variabel memiliki skala yang sebanding. Tahapan ini biasanya dilakukan pada preprocessing sebelum analisis atau pemodelan machine learning.</p>
+<p>Tujuan utama normalisasi adalah menghindari dominasi atribut yang memiliki skala besar sehingga setiap fitur dapat berkontribusi secara seimbang dalam proses perhitungan.</p>
+<hr class="docutils" />
+<section id="macam-macam-normalisasi-data">
+<h3>2.1 Macam-macam Normalisasi Data<a class="headerlink" href="#macam-macam-normalisasi-data" title="Link to this heading">#</a></h3>
+<section id="min-max-normalization">
+<h4>1. Min-Max Normalization<a class="headerlink" href="#min-max-normalization" title="Link to this heading">#</a></h4>
+<p>Min-Max Normalization digunakan untuk mengubah nilai data ke dalam rentang tertentu, umumnya antara 0 hingga 1.</p>
+<p>Rumus:</p>
+<div class="math notranslate nohighlight">
+\[
+x' = \frac{x - x_{\min}}{x_{\max} - x_{\min}}
+\]</div>
+<p><strong>Contoh:</strong></p>
+<p>Menggunakan data pada kolom <strong>AGE</strong>:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>AGE</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>65.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>78.9</p></td>
+</tr>
+<tr class="row-even"><td><p>45.8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Nilai minimum dan maksimum:</p>
+<ul class="simple">
+<li><p>(x_{min} = 45.8)</p></li>
+<li><p>(x_{max} = 78.9)</p></li>
+</ul>
+<p>Perhitungan:</p>
+<div class="math notranslate nohighlight">
+\[
+x' = \frac{65.2 - 45.8}{78.9 - 45.8}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+x' = \frac{19.4}{33.1}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+x' = 0.586
+\]</div>
+<p>Hasil:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>AGE Asli</p></th>
+<th class="head"><p>AGE Normalisasi</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>65.2</p></td>
+<td><p>0.586</p></td>
+</tr>
+<tr class="row-odd"><td><p>78.9</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>45.8</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="z-score-normalization">
+<h4>2. Z-Score Normalization<a class="headerlink" href="#z-score-normalization" title="Link to this heading">#</a></h4>
+<p>Z-Score Normalization adalah metode normalisasi dengan menggunakan rata-rata (mean) dan standar deviasi.</p>
+<p>Rumus:</p>
+<div class="math notranslate nohighlight">
+\[
+x' = \frac{x - \mu}{\sigma}
+\]</div>
+<p><strong>Contoh:</strong></p>
+<p>Data <strong>AGE</strong>:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>AGE</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>65.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>78.9</p></td>
+</tr>
+<tr class="row-even"><td><p>45.8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="menghitung-mean">
+<h5>Menghitung Mean<a class="headerlink" href="#menghitung-mean" title="Link to this heading">#</a></h5>
+<div class="math notranslate nohighlight">
+\[
+\mu = \frac{65.2 + 78.9 + 45.8}{3}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\mu = 63.3
+\]</div>
+</section>
+<section id="menghitung-standar-deviasi">
+<h5>Menghitung Standar Deviasi<a class="headerlink" href="#menghitung-standar-deviasi" title="Link to this heading">#</a></h5>
+<div class="math notranslate nohighlight">
+\[
+(65.2 - 63.3)^2 = 3.61
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+(78.9 - 63.3)^2 = 243.36
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+(45.8 - 63.3)^2 = 306.25
+\]</div>
+<p>Jumlah:
+$<span class="math notranslate nohighlight">\(
+553.22
+\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{553.22}{3} = 184.41
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\sigma = \sqrt{184.41} = 13.58
+\]</div>
+</section>
+<section id="perhitungan-z-score">
+<h5>Perhitungan Z-Score<a class="headerlink" href="#perhitungan-z-score" title="Link to this heading">#</a></h5>
+<div class="math notranslate nohighlight">
+\[
+x' = \frac{65.2 - 63.3}{13.58} = 0.14
+\]</div>
+<p>Hasil:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>AGE Asli</p></th>
+<th class="head"><p>Z-Score</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>65.2</p></td>
+<td><p>0.14</p></td>
+</tr>
+<tr class="row-odd"><td><p>78.9</p></td>
+<td><p>1.15</p></td>
+</tr>
+<tr class="row-even"><td><p>45.8</p></td>
+<td><p>-1.29</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="decimal-scaling-normalization">
+<h4>3. Decimal Scaling Normalization<a class="headerlink" href="#decimal-scaling-normalization" title="Link to this heading">#</a></h4>
+<p>Decimal Scaling dilakukan dengan membagi nilai data dengan pangkat 10 berdasarkan jumlah digit terbesar.</p>
+<p>Rumus:</p>
+<div class="math notranslate nohighlight">
+\[
+x' = \frac{x}{10^j}
+\]</div>
+<p><strong>Contoh:</strong></p>
+<p>Data <strong>AGE</strong>:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>AGE</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>65.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>78.9</p></td>
+</tr>
+<tr class="row-even"><td><p>45.8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Nilai terbesar adalah <strong>78.9</strong>, memiliki 2 digit sebelum desimal → (j = 2)</p>
+<p>Perhitungan:</p>
+<div class="math notranslate nohighlight">
+\[
+x' = \frac{65.2}{10^2} = 0.652
+\]</div>
+<p>Hasil:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>AGE Asli</p></th>
+<th class="head"><p>Decimal Scaling</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>65.2</p></td>
+<td><p>0.652</p></td>
+</tr>
+<tr class="row-odd"><td><p>78.9</p></td>
+<td><p>0.789</p></td>
+</tr>
+<tr class="row-even"><td><p>45.8</p></td>
+<td><p>0.458</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="normalisasi-data-menggunakan-sklearn">
+<h3>2.2 Normalisasi Data Menggunakan SKLearn<a class="headerlink" href="#normalisasi-data-menggunakan-sklearn" title="Link to this heading">#</a></h3>
+<p>Selain perhitungan manual, normalisasi juga dapat dilakukan menggunakan library <strong>scikit-learn (sklearn)</strong> untuk mempermudah proses.</p>
+<p>Digunakan data pada kolom <strong>AGE</strong>:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>AGE</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>65.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>78.9</p></td>
+</tr>
+<tr class="row-even"><td><p>45.8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<section id="min-max-normalization-sklearn">
+<h4>1. Min-Max Normalization (sklearn)<a class="headerlink" href="#min-max-normalization-sklearn" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">MinMaxScaler</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;AGE&#39;</span><span class="p">:[</span><span class="mf">65.2</span><span class="p">,</span><span class="mf">78.9</span><span class="p">,</span><span class="mf">45.8</span><span class="p">]}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;AGE_MinMax&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;AGE&#39;</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>OUTPUT:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>AGE</p></th>
+<th class="head"><p>AGE_MinMax</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>65.2</p></td>
+<td><p>0.586</p></td>
+</tr>
+<tr class="row-odd"><td><p>78.9</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>45.8</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="z-score-normalization-sklearn">
+<h4>2. Z-Score Normalization (sklearn)<a class="headerlink" href="#z-score-normalization-sklearn" title="Link to this heading">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;AGE_ZScore&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;AGE&#39;</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>OUTPUT:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>AGE</p></th>
+<th class="head"><p>AGE_ZScore</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>65.2</p></td>
+<td><p>0.14</p></td>
+</tr>
+<tr class="row-odd"><td><p>78.9</p></td>
+<td><p>1.15</p></td>
+</tr>
+<tr class="row-even"><td><p>45.8</p></td>
+<td><p>-1.29</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="decimal-scaling-python">
+<h4>3. Decimal Scaling (Python)<a class="headerlink" href="#decimal-scaling-python" title="Link to this heading">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;AGE&#39;</span><span class="p">:[</span><span class="mf">65.2</span><span class="p">,</span><span class="mf">78.9</span><span class="p">,</span><span class="mf">45.8</span><span class="p">]}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">max_value</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;AGE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">j</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">max_value</span><span class="p">)))</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;AGE_Decimal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;AGE&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="n">j</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>OUTPUT:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>AGE</p></th>
+<th class="head"><p>AGE_Decimal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>65.2</p></td>
+<td><p>0.652</p></td>
+</tr>
+<tr class="row-odd"><td><p>78.9</p></td>
+<td><p>0.789</p></td>
+</tr>
+<tr class="row-even"><td><p>45.8</p></td>
+<td><p>0.458</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id8">
+<h4>Kesimpulan<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
+<p>Hasil normalisasi menggunakan sklearn menunjukkan nilai yang sama dengan perhitungan manual. Hal ini membuktikan bahwa proses normalisasi telah dilakukan dengan benar dan sklearn dapat digunakan untuk mempercepat proses preprocessing data.</p>
+</section>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1148,6 +1768,51 @@ d(1,3) = 24.000102 + 0 + 0 = 24.000102
 </ul>
 </li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mengukur-jarak-dataset-tipe-data-campuran">6.2.2 Mengukur jarak dataset Tipe data campuran</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-yang-digunakan">1. Dataset yang Digunakan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-wknn-manual">2. Perhitungan WKNN Manual</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-missing-value">2.1 Identifikasi Missing Value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-data">2.2 Normalisasi Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-similarity-si">2.3 Menghitung Similarity (Si)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-penyebut">2.4 Menghitung Penyebut</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-pembilang">2.5 Menghitung Pembilang</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-imputasi">2.6 Hasil Imputasi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-wknn-menggunakan-python">3. Perhitungan WKNN Menggunakan Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library">3.1 Import Library</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#membaca-dataset">3.2 Membaca Dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-kolom-normalisasi">3.3 Menentukan Kolom Normalisasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-min-dan-max">Menghitung Min dan Max</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3.5 Normalisasi Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-data-missing">3.6 Menentukan Data Missing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-similarity">3.7 Menghitung Similarity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3.8 Menghitung Penyebut</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">3.9 Menghitung Pembilang</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">3.10 Hasil Imputasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">3.11 Kesimpulan</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2. Normalisasi Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macam-macam-normalisasi-data">2.1 Macam-macam Normalisasi Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#min-max-normalization">1. Min-Max Normalization</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#z-score-normalization">2. Z-Score Normalization</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-mean">Menghitung Mean</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-standar-deviasi">Menghitung Standar Deviasi</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-z-score">Perhitungan Z-Score</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#decimal-scaling-normalization">3. Decimal Scaling Normalization</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-data-menggunakan-sklearn">2.2 Normalisasi Data Menggunakan SKLearn</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#min-max-normalization-sklearn">1. Min-Max Normalization (sklearn)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#z-score-normalization-sklearn">2. Z-Score Normalization (sklearn)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#decimal-scaling-python">3. Decimal Scaling (Python)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Kesimpulan</a></li>
 </ul>
 </li>
 </ul>
